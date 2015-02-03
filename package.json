@@ -1,0 +1,30 @@
+{
+  "name": "NodeAPI",
+  "version": "0.0.0",
+  "description": "This is an API made during Makers Academy",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:HannahCarney/NodeAPI.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Hannah Carney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HannahCarney/NodeAPI/issues"
+  },
+  "homepage": "https://github.com/HannahCarney/NodeAPI",
+  "devDependencies": {
+    "casper-chai": "^0.2.1",
+    "casperjs": "^1.1.0-beta3",
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0",
+    "mocha-casperjs": "^0.5.3",
+    "phantomjs": "^1.9.15"
+  }
+}
