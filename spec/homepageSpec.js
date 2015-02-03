@@ -12,10 +12,32 @@ describe('By default', function(){
   });
 
   it('should have a starting point', function() {
-    expect(player.begin).toBe("a1");
+    expect(player.place).toBe("a1");
   });
 
   it('should have a path', function(){
     expect(path.grid).toContain("b2");
   });
 });
+
+describe('player movements', function(){
+
+  beforeEach(function(){
+    player = new Player();
+  });
+
+  it('should be able to move right', function(){
+    player.moveRight()
+    expect(player.place).toBe("a2");
+  })
+
+  it('should be able to move left', function(){
+    player.moveRight()
+    expect(player.place).toBe("a2")
+    player.moveLeft()
+    expect(player.place).toBe("a1")
+  });
+
+
+
+})
