@@ -1,5 +1,6 @@
 var Player = require('../js/player');
 var Path = require('../js/path');
+var Grid = require('../js/grid');
 
 
 describe('By default', function(){
@@ -9,6 +10,7 @@ describe('By default', function(){
   beforeEach(function(){
   	player = new Player();
     path = new Path();
+    grid = new Grid();
   });
 
   it('should have a starting point', function() {
@@ -16,7 +18,7 @@ describe('By default', function(){
   });
 
   it('should have a path', function(){
-    expect(path.grid).toContain("b2");
+    expect(grid.map).toContain("b2");
   });
 });
 
@@ -24,6 +26,7 @@ describe('player movements', function(){
 
   beforeEach(function(){
     player = new Player();
+    grid = new Grid();
   });
 
   it('should be able to move right', function(){
@@ -57,4 +60,12 @@ describe('player movements', function(){
   });
 
 
-})
+});
+
+describe('grid properties', function(){
+
+  it('should have a wall', function(){
+    
+  });
+
+});
