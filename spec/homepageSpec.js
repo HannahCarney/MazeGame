@@ -18,7 +18,7 @@ describe('By default', function(){
   });
 
   it('should have a path', function(){
-    expect(grid.map).toContain("b2");
+    expect(grid.path).toContain("b2");
   });
 });
 
@@ -64,8 +64,13 @@ describe('player movements', function(){
 
 describe('grid properties', function(){
 
-  it('should have a wall', function(){
-    
+  beforeEach(function(){
+    grid = new Grid();
+    path = new Path();
+  });
+
+  it('should have a path', function(){
+    expect(grid.path).toContain(path)
   });
 
 });
