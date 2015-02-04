@@ -1,9 +1,6 @@
-var path = require('./path')
 
-// var path = new Path();
 
 var Grid = function(){
-  
   this.columns = 4;
   var rows = ["a", "b"];
   var grid = [];
@@ -12,7 +9,7 @@ var Grid = function(){
       grid.push(rows[rowIndex] + column);
     }
   }
-  this.path = grid;
+  this.map = grid;
 };
 
 module.exports = Grid;

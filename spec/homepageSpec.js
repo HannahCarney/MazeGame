@@ -1,15 +1,12 @@
 var Player = require('../js/player');
-var Path = require('../js/path');
 var Grid = require('../js/grid');
 
 
 describe('By default', function(){
 	var player
-  var path
   
   beforeEach(function(){
   	player = new Player();
-    path = new Path();
     grid = new Grid();
   });
 
@@ -18,7 +15,7 @@ describe('By default', function(){
   });
 
   it('should have a path', function(){
-    expect(grid.path).toContain("b2");
+    expect(grid.map).toContain("b2");
   });
 });
 
@@ -66,11 +63,12 @@ describe('grid properties', function(){
 
   beforeEach(function(){
     grid = new Grid();
-    path = new Path();
   });
 
-  it('should have a path', function(){
-    expect(grid.path).toContain(path)
-  });
+  it('player should not be able to walk into wall', function(){
+    player.moveDown();
+    player.moveDown();
+    expect(player.place).toRaiseError("Can't move there")
+   });
 
 });
