@@ -62,13 +62,17 @@ describe('player movements', function(){
 describe('grid properties', function(){
 
   beforeEach(function(){
+  	player = new Player();
     grid = new Grid();
   });
 
-  it('player should not be able to walk into wall', function(){
-    player.moveDown();
-    player.moveDown();
-    expect(player.place).toRaiseError("Can't move there")
+  it('player should not be able to walk off the grid', function(){
+    expect(player.moveLeft()).toBe("error");
    });
+
+  it('player should not be able to walk into wall', function(){
+    player.moveRight();
+  	expect(player.moveRight()).toBe("can't move there");
+  });
 
 });
