@@ -1,144 +1,216 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'grunt-cli' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '=g', 'phantomjs' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.36
-4 verbose cache add [ 'grunt-cli', null ]
-5 verbose cache add name=undefined spec="grunt-cli" args=["grunt-cli",null]
-6 verbose parsed url { protocol: null,
-6 verbose parsed url   slashes: null,
-6 verbose parsed url   auth: null,
-6 verbose parsed url   host: null,
-6 verbose parsed url   port: null,
-6 verbose parsed url   hostname: null,
-6 verbose parsed url   hash: null,
-6 verbose parsed url   search: null,
-6 verbose parsed url   query: null,
-6 verbose parsed url   pathname: 'grunt-cli',
-6 verbose parsed url   path: 'grunt-cli',
-6 verbose parsed url   href: 'grunt-cli' }
-7 silly lockFile 671ef8ac-grunt-cli grunt-cli
-8 verbose lock grunt-cli /Users/hannahcarney1/.npm/671ef8ac-grunt-cli.lock
-9 silly lockFile 671ef8ac-grunt-cli grunt-cli
-10 silly lockFile 671ef8ac-grunt-cli grunt-cli
-11 verbose addNamed [ 'grunt-cli', '' ]
-12 verbose addNamed [ null, '*' ]
-13 silly lockFile d63f3d0b-grunt-cli grunt-cli@
-14 verbose lock grunt-cli@ /Users/hannahcarney1/.npm/d63f3d0b-grunt-cli.lock
-15 silly addNameRange { name: 'grunt-cli', range: '*', hasData: false }
-16 verbose request where is /grunt-cli
-17 verbose request registry https://registry.npmjs.org/
-18 verbose request id 6743dc7cbf221948
-19 verbose url raw /grunt-cli
-20 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-cli' ]
-21 verbose url resolved https://registry.npmjs.org/grunt-cli
-22 verbose request where is https://registry.npmjs.org/grunt-cli
-23 info trying registry request attempt 1 at 14:38:26
-24 verbose etag "9WGSBU95PZJAHD0WZGUHPV1R1"
-25 http GET https://registry.npmjs.org/grunt-cli
-26 http 304 https://registry.npmjs.org/grunt-cli
-27 silly registry.get cb [ 304,
-27 silly registry.get   { date: 'Wed, 04 Feb 2015 14:33:21 GMT',
-27 silly registry.get     server: 'Apache',
-27 silly registry.get     via: '1.1 varnish',
-27 silly registry.get     'last-modified': 'Wed, 04 Feb 2015 14:33:21 GMT',
-27 silly registry.get     'cache-control': 'max-age=60',
-27 silly registry.get     etag: '"9WGSBU95PZJAHD0WZGUHPV1R1"',
-27 silly registry.get     age: '6',
-27 silly registry.get     'x-served-by': 'cache-ams4145-AMS',
-27 silly registry.get     'x-cache': 'HIT',
-27 silly registry.get     'x-cache-hits': '1',
-27 silly registry.get     'x-timer': 'S1423060401.862477,VS0,VE0',
-27 silly registry.get     vary: 'Accept',
-27 silly registry.get     'content-length': '0',
-27 silly registry.get     'keep-alive': 'timeout=10, max=50',
-27 silly registry.get     connection: 'Keep-Alive' } ]
-28 verbose etag https://registry.npmjs.org/grunt-cli from cache
-29 silly addNameRange number 2 { name: 'grunt-cli', range: '*', hasData: true }
-30 silly addNameRange versions [ 'grunt-cli',
-30 silly addNameRange   [ '0.1.0',
-30 silly addNameRange     '0.1.1',
-30 silly addNameRange     '0.1.2',
-30 silly addNameRange     '0.1.3',
-30 silly addNameRange     '0.1.4',
-30 silly addNameRange     '0.1.5',
-30 silly addNameRange     '0.1.6',
-30 silly addNameRange     '0.1.7',
-30 silly addNameRange     '0.1.8',
-30 silly addNameRange     '0.1.9',
-30 silly addNameRange     '0.1.10',
-30 silly addNameRange     '0.1.11',
-30 silly addNameRange     '0.1.12',
-30 silly addNameRange     '0.1.13' ] ]
-31 verbose addNamed [ 'grunt-cli', '0.1.13' ]
-32 verbose addNamed [ '0.1.13', '0.1.13' ]
-33 silly lockFile 28997503-grunt-cli-0-1-13 grunt-cli@0.1.13
-34 verbose lock grunt-cli@0.1.13 /Users/hannahcarney1/.npm/28997503-grunt-cli-0-1-13.lock
-35 silly lockFile 28997503-grunt-cli-0-1-13 grunt-cli@0.1.13
-36 silly lockFile 28997503-grunt-cli-0-1-13 grunt-cli@0.1.13
-37 silly lockFile d63f3d0b-grunt-cli grunt-cli@
-38 silly lockFile d63f3d0b-grunt-cli grunt-cli@
-39 silly resolved [ { name: 'grunt-cli',
-39 silly resolved     description: 'The grunt command line interface.',
-39 silly resolved     version: '0.1.13',
-39 silly resolved     author: { name: 'Grunt Team' },
-39 silly resolved     homepage: 'http://gruntjs.com/',
-39 silly resolved     repository: { type: 'git', url: 'git://github.com/gruntjs/grunt-cli.git' },
-39 silly resolved     bugs: { url: 'http://github.com/gruntjs/grunt-cli/issues' },
-39 silly resolved     licenses: [ [Object] ],
-39 silly resolved     bin: { grunt: 'bin/grunt' },
-39 silly resolved     engines: { node: '>= 0.8.0' },
-39 silly resolved     scripts: { test: 'node bin/grunt test' },
-39 silly resolved     preferGlobal: true,
-39 silly resolved     dependencies: { nopt: '~1.0.10', 'findup-sync': '~0.1.0', resolve: '~0.3.1' },
-39 silly resolved     devDependencies: { grunt: '~0.4.0', 'grunt-contrib-jshint': '~0.2.0' },
-39 silly resolved     contributors: [ [Object], [Object], [Object], [Object] ],
-39 silly resolved     _id: 'grunt-cli@0.1.13',
-39 silly resolved     dist:
-39 silly resolved      { shasum: 'e9ebc4047631f5012d922770c39378133cad10f4',
-39 silly resolved        tarball: 'http://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz' },
-39 silly resolved     _from: 'grunt-cli@',
-39 silly resolved     _npmVersion: '1.3.24',
-39 silly resolved     _npmUser: { name: 'tkellen', email: 'tyler@sleekcode.net' },
-39 silly resolved     maintainers: [ [Object] ],
-39 silly resolved     directories: {},
-39 silly resolved     _shasum: 'e9ebc4047631f5012d922770c39378133cad10f4',
-39 silly resolved     _resolved: 'https://registry.npmjs.org/grunt-cli/-/grunt-cli-0.1.13.tgz',
-39 silly resolved     readme: 'ERROR: No README data found!' } ]
-40 info install grunt-cli@0.1.13 into /usr/local/lib
-41 info installOne grunt-cli@0.1.13
-42 verbose lib/node_modules/grunt-cli unbuild
-43 verbose tar unpack /Users/hannahcarney1/.npm/grunt-cli/0.1.13/package.tgz
-44 silly lockFile 466968dc-local-lib-node-modules-grunt-cli tar:///usr/local/lib/node_modules/grunt-cli
-45 verbose lock tar:///usr/local/lib/node_modules/grunt-cli /Users/hannahcarney1/.npm/466968dc-local-lib-node-modules-grunt-cli.lock
-46 silly lockFile aee26831-npm-grunt-cli-0-1-13-package-tgz tar:///Users/hannahcarney1/.npm/grunt-cli/0.1.13/package.tgz
-47 verbose lock tar:///Users/hannahcarney1/.npm/grunt-cli/0.1.13/package.tgz /Users/hannahcarney1/.npm/aee26831-npm-grunt-cli-0-1-13-package-tgz.lock
-48 silly gunzTarPerm modes [ '755', '644' ]
-49 error Error: EACCES, mkdir '/usr/local/lib/node_modules/grunt-cli'
-49 error  { [Error: EACCES, mkdir '/usr/local/lib/node_modules/grunt-cli']
-49 error   errno: 3,
-49 error   code: 'EACCES',
-49 error   path: '/usr/local/lib/node_modules/grunt-cli',
-49 error   fstream_type: 'Directory',
-49 error   fstream_path: '/usr/local/lib/node_modules/grunt-cli',
-49 error   fstream_class: 'DirWriter',
-49 error   fstream_stack:
-49 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
-49 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
-49 error      'Object.oncomplete (fs.js:108:15)' ] }
-50 error Please try running this command again as root/Administrator.
-51 error System Darwin 14.0.0
-52 error command "node" "/usr/local/bin/npm" "install" "-g" "grunt-cli"
-53 error cwd /Users/hannahcarney1/Desktop/Programming/NodeAPI
-54 error node -v v0.10.36
-55 error npm -v 1.4.28
-56 error path /usr/local/lib/node_modules/grunt-cli
-57 error fstream_path /usr/local/lib/node_modules/grunt-cli
-58 error fstream_type Directory
-59 error fstream_class DirWriter
-60 error code EACCES
-61 error errno 3
-62 error stack Error: EACCES, mkdir '/usr/local/lib/node_modules/grunt-cli'
-63 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
-63 error fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
-63 error fstream_stack Object.oncomplete (fs.js:108:15)
-64 verbose exit [ 3, true ]
+4 warn package.json NodeAPI@0.0.0 No README data
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ '=g', null ]
+7 verbose cache add name=undefined spec="=g" args=["=g",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '=g',
+8 verbose parsed url   path: '=g',
+8 verbose parsed url   href: '=g' }
+9 verbose cache add [ 'phantomjs', null ]
+10 verbose cache add name=undefined spec="phantomjs" args=["phantomjs",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'phantomjs',
+11 verbose parsed url   path: 'phantomjs',
+11 verbose parsed url   href: 'phantomjs' }
+12 silly lockFile ff862231-g =g
+13 verbose lock =g /Users/hannahcarney1/.npm/ff862231-g.lock
+14 silly lockFile 30d7cd7d-phantomjs phantomjs
+15 verbose lock phantomjs /Users/hannahcarney1/.npm/30d7cd7d-phantomjs.lock
+16 silly lockFile ff862231-g =g
+17 silly lockFile ff862231-g =g
+18 silly lockFile 30d7cd7d-phantomjs phantomjs
+19 silly lockFile 30d7cd7d-phantomjs phantomjs
+20 verbose addNamed [ '=g', '' ]
+21 verbose addNamed [ null, '*' ]
+22 silly lockFile 4cba7267-g =g@
+23 verbose lock =g@ /Users/hannahcarney1/.npm/4cba7267-g.lock
+24 verbose addNamed [ 'phantomjs', '' ]
+25 verbose addNamed [ null, '*' ]
+26 silly lockFile 29cf7fd6-phantomjs phantomjs@
+27 verbose lock phantomjs@ /Users/hannahcarney1/.npm/29cf7fd6-phantomjs.lock
+28 silly addNameRange { name: '=g', range: '*', hasData: false }
+29 silly addNameRange { name: 'phantomjs', range: '*', hasData: false }
+30 verbose request where is /=g
+31 verbose request registry https://registry.npmjs.org/
+32 verbose request id 188b4ab274f18bfe
+33 verbose url raw /=g
+34 verbose url resolving [ 'https://registry.npmjs.org/', './%3Dg' ]
+35 verbose url resolved https://registry.npmjs.org/%3Dg
+36 verbose request where is https://registry.npmjs.org/%3Dg
+37 info trying registry request attempt 1 at 14:34:07
+38 http GET https://registry.npmjs.org/%3Dg
+39 verbose request where is /phantomjs
+40 verbose request registry https://registry.npmjs.org/
+41 verbose url raw /phantomjs
+42 verbose url resolving [ 'https://registry.npmjs.org/', './phantomjs' ]
+43 verbose url resolved https://registry.npmjs.org/phantomjs
+44 verbose request where is https://registry.npmjs.org/phantomjs
+45 info trying registry request attempt 1 at 14:34:07
+46 verbose etag "327UE9QWMPYUO7QBME4O6T4OU"
+47 http GET https://registry.npmjs.org/phantomjs
+48 http 304 https://registry.npmjs.org/phantomjs
+49 silly registry.get cb [ 304,
+49 silly registry.get   { date: 'Thu, 05 Feb 2015 14:29:00 GMT',
+49 silly registry.get     server: 'Apache',
+49 silly registry.get     via: '1.1 varnish',
+49 silly registry.get     'last-modified': 'Thu, 05 Feb 2015 14:29:00 GMT',
+49 silly registry.get     'cache-control': 'max-age=60',
+49 silly registry.get     etag: '"327UE9QWMPYUO7QBME4O6T4OU"',
+49 silly registry.get     age: '18',
+49 silly registry.get     'x-served-by': 'cache-lcy1127-LCY',
+49 silly registry.get     'x-cache': 'HIT',
+49 silly registry.get     'x-cache-hits': '1',
+49 silly registry.get     'x-timer': 'S1423146540.524001,VS0,VE0',
+49 silly registry.get     vary: 'Accept',
+49 silly registry.get     'content-length': '0',
+49 silly registry.get     'keep-alive': 'timeout=10, max=50',
+49 silly registry.get     connection: 'Keep-Alive' } ]
+50 verbose etag https://registry.npmjs.org/phantomjs from cache
+51 silly addNameRange number 2 { name: 'phantomjs', range: '*', hasData: true }
+52 silly addNameRange versions [ 'phantomjs',
+52 silly addNameRange   [ '0.0.1',
+52 silly addNameRange     '0.0.2',
+52 silly addNameRange     '0.0.3',
+52 silly addNameRange     '0.0.4',
+52 silly addNameRange     '0.0.5',
+52 silly addNameRange     '0.0.6',
+52 silly addNameRange     '0.0.7',
+52 silly addNameRange     '0.0.8',
+52 silly addNameRange     '0.0.9',
+52 silly addNameRange     '0.1.0',
+52 silly addNameRange     '0.1.1',
+52 silly addNameRange     '0.2.0',
+52 silly addNameRange     '0.2.1',
+52 silly addNameRange     '0.2.2',
+52 silly addNameRange     '0.2.3',
+52 silly addNameRange     '0.2.4',
+52 silly addNameRange     '0.2.5',
+52 silly addNameRange     '0.2.6',
+52 silly addNameRange     '1.8.0-1',
+52 silly addNameRange     '1.8.1-1',
+52 silly addNameRange     '1.8.1-2',
+52 silly addNameRange     '1.8.1-3',
+52 silly addNameRange     '1.8.2-0',
+52 silly addNameRange     '1.8.2-1',
+52 silly addNameRange     '1.8.2-2',
+52 silly addNameRange     '1.9.0-0',
+52 silly addNameRange     '1.9.0-1',
+52 silly addNameRange     '1.9.0-2',
+52 silly addNameRange     '1.9.0-3',
+52 silly addNameRange     '1.9.0-4',
+52 silly addNameRange     '1.9.0-5',
+52 silly addNameRange     '1.9.0-6',
+52 silly addNameRange     '1.9.1-0',
+52 silly addNameRange     '1.9.1-2',
+52 silly addNameRange     '1.9.1-3',
+52 silly addNameRange     '1.9.1-4',
+52 silly addNameRange     '1.9.1-5',
+52 silly addNameRange     '1.9.1-6',
+52 silly addNameRange     '1.9.1-7',
+52 silly addNameRange     '1.9.1-8',
+52 silly addNameRange     '1.9.1-9',
+52 silly addNameRange     '1.9.2-0',
+52 silly addNameRange     '1.9.2-1',
+52 silly addNameRange     '1.9.2-2',
+52 silly addNameRange     '1.9.2-3',
+52 silly addNameRange     '1.9.2-4',
+52 silly addNameRange     '1.9.2-5',
+52 silly addNameRange     '1.9.2-6',
+52 silly addNameRange     '1.9.6-0',
+52 silly addNameRange     '1.9.7-1',
+52 silly addNameRange     '1.9.7-3',
+52 silly addNameRange     '1.9.7-4',
+52 silly addNameRange     '1.9.7-5',
+52 silly addNameRange     '1.9.7-6',
+52 silly addNameRange     '1.9.7-7',
+52 silly addNameRange     '1.9.7-8',
+52 silly addNameRange     '1.9.7-9',
+52 silly addNameRange     '1.9.7-10',
+52 silly addNameRange     '1.9.7-11',
+52 silly addNameRange     '1.9.7-12',
+52 silly addNameRange     '1.9.7-13',
+52 silly addNameRange     '1.9.7-14',
+52 silly addNameRange     '1.9.7-15',
+52 silly addNameRange     '1.8.2-3',
+52 silly addNameRange     '1.9.8',
+52 silly addNameRange     '1.9.9',
+52 silly addNameRange     '1.9.10',
+52 silly addNameRange     '1.9.11',
+52 silly addNameRange     '1.9.12',
+52 silly addNameRange     '1.9.13',
+52 silly addNameRange     '1.9.15' ] ]
+53 verbose addNamed [ 'phantomjs', '1.9.15' ]
+54 verbose addNamed [ '1.9.15', '1.9.15' ]
+55 silly lockFile c14a4246-phantomjs-1-9-15 phantomjs@1.9.15
+56 verbose lock phantomjs@1.9.15 /Users/hannahcarney1/.npm/c14a4246-phantomjs-1-9-15.lock
+57 silly lockFile c14a4246-phantomjs-1-9-15 phantomjs@1.9.15
+58 silly lockFile c14a4246-phantomjs-1-9-15 phantomjs@1.9.15
+59 silly lockFile 29cf7fd6-phantomjs phantomjs@
+60 silly lockFile 29cf7fd6-phantomjs phantomjs@
+61 http 404 https://registry.npmjs.org/%3Dg
+62 verbose headers { date: 'Thu, 05 Feb 2015 14:29:00 GMT',
+62 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+62 verbose headers   'content-type': 'application/json',
+62 verbose headers   'cache-control': 'max-age=0',
+62 verbose headers   'content-length': '52',
+62 verbose headers   'accept-ranges': 'bytes',
+62 verbose headers   via: '1.1 varnish',
+62 verbose headers   age: '0',
+62 verbose headers   'x-served-by': 'cache-lcy1134-LCY',
+62 verbose headers   'x-cache': 'MISS',
+62 verbose headers   'x-cache-hits': '0',
+62 verbose headers   'x-timer': 'S1423146540.526016,VS0,VE169',
+62 verbose headers   'keep-alive': 'timeout=10, max=50',
+62 verbose headers   connection: 'Keep-Alive' }
+63 silly registry.get cb [ 404,
+63 silly registry.get   { date: 'Thu, 05 Feb 2015 14:29:00 GMT',
+63 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+63 silly registry.get     'content-type': 'application/json',
+63 silly registry.get     'cache-control': 'max-age=0',
+63 silly registry.get     'content-length': '52',
+63 silly registry.get     'accept-ranges': 'bytes',
+63 silly registry.get     via: '1.1 varnish',
+63 silly registry.get     age: '0',
+63 silly registry.get     'x-served-by': 'cache-lcy1134-LCY',
+63 silly registry.get     'x-cache': 'MISS',
+63 silly registry.get     'x-cache-hits': '0',
+63 silly registry.get     'x-timer': 'S1423146540.526016,VS0,VE169',
+63 silly registry.get     'keep-alive': 'timeout=10, max=50',
+63 silly registry.get     connection: 'Keep-Alive' } ]
+64 silly lockFile 4cba7267-g =g@
+65 silly lockFile 4cba7267-g =g@
+66 error 404 404 Not Found: %3Dg
+66 error 404
+66 error 404 '%3Dg' is not in the npm registry.
+66 error 404 You should bug the author to publish it
+66 error 404 It was specified as a dependency of 'NodeAPI'
+66 error 404
+66 error 404 Note that you can also install from a
+66 error 404 tarball, folder, or http url, or git url.
+67 error System Darwin 14.0.0
+68 error command "node" "/usr/local/bin/npm" "install" "=g" "phantomjs"
+69 error cwd /Users/hannahcarney1/Desktop/Programming/MazeGame
+70 error node -v v0.10.36
+71 error npm -v 1.4.28
+72 error code E404
+73 verbose exit [ 1, true ]
