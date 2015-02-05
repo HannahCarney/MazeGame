@@ -27,33 +27,32 @@ describe('player movements', function(){
   });
 
   it('should be able to move right', function(){
+  	player.moveLeft();
     player.moveRight();
-    expect(player.place).toBe("a8");
+    expect(player.place).toBe("a7");
   })
 
   it('should be able to move left', function(){
-    player.moveRight();
-    expect(player.place).toBe("a2");
     player.moveLeft();
-    expect(player.place).toBe("a1");
+    expect(player.place).toBe("a6");
   });
 
   it('should be able to move down', function(){
   	player.moveDown();
-  	expect(player.place).toBe("b1");
+  	expect(player.place).toBe("b7");
   });
 
   it('should be able to move up', function(){
   	player.moveDown();
-  	expect(player.place).toBe("b1");
+  	expect(player.place).toBe("b7");
   	player.moveUp();
-  	expect(player.place).toBe("a1")
+  	expect(player.place).toBe("a7")
   });
 
   it('should be able to move down then right', function(){
   	player.moveDown();
   	player.moveRight();
-  	expect(player.place).toBe("b2")
+  	expect(player.place).toBe("b8")
   });
 });
 
@@ -65,19 +64,11 @@ describe('grid properties', function(){
   });
 
   it('player should not be able to walk off the grid', function(){
-    expect(player.moveLeft()).toBe("error");
+    expect(player.moveUp()).toBe("area limit");
    });
 
-  it('player should not be able to walk into wall', function(){
-    player.moveRight();
+   it('player should not be able to walk into wall', function(){
   	expect(player.moveRight()).toBe("can't move there");
-  });
-
-   it('player should not be able to walk into second wall', function(){
-    player.moveRight();
-    player.moveDown();
-    player.moveDown();
-  	expect(player.moveDown()).toBe("can't move there");
   });
 
 });
