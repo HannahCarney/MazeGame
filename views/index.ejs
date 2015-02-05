@@ -6,14 +6,44 @@
   <title>Welcome to The Amazing-Maze-Maze</title>
  </head>
 <body>
+
+    <img src="http://www.abcteach.com/free/c/circlergb.jpg" id="circle">
+
   <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
   <script src="js/interface.js"></script> 
+  <script src="js/grid.js"></script>
+  <script src="js/player.js"></script>
 
   <script type="text/javascript">
   $(document).ready(function () {
+    
+    $(document).keydown(function(key) {
+    
+        switch(parseInt(key.which,10)) {
+          // Left Arrow Pressed
+          case 37:
+            $('#circle').animate({left: "-=10px"}, 10);
+          break;
 
+          // Up Arrow Pressed
+          case 38:
+            $('#circle').animate({bottom: "+=10px"}, 10);
+          break;
+                
+          // Right Arrow Pressed
+          case 39:
+            $('#circle').animate({left: "+=10px"}, 10);
+          break;
+
+          // Down Arrow Pressed
+          case 40:
+            $('#circle').animate({bottom: "-=10px"}, 10);
+          break;
+    
+        } 
      
- });
+   });
+  });
   </script>   
 </body>
 </html>

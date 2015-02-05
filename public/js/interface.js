@@ -1,5 +1,5 @@
 
-  var grid = clickableGrid(10,10,function(row,col){
+  var grid = movableGrid(10,10,function(row,col){
       console.log("You moved up:",col);
       console.log("You moved left:",row);
       console.log("You moved right:",row);
@@ -9,7 +9,7 @@
 
 document.body.appendChild(grid); 
 
-function clickableGrid( rows, cols, callback ){
+function movableGrid( rows, cols, callback ){
     var i=0;
     var grid = document.createElement('table');
     grid.className = 'grid';
@@ -18,9 +18,9 @@ function clickableGrid( rows, cols, callback ){
         for (var c=0;c<cols;++c){
             var cell = tr.appendChild(document.createElement('td'));
             cell.innerHTML = ++i;
-            cell.addEventListener('click',(function(el,r,c,i){
+            cell.addEventListener('click',(function(row,col){
                 return function(){
-                    callback(el,r,c,i);
+                    callback(row,col);
                 }
             })(cell,r,c,i),false);
         }

@@ -11,3 +11,12 @@
     background-color:yellow;
     font-weight:bold; color:red;
 }
+
+#circle {
+    z-index: 100;
+    height: 5%;
+    width: 5%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
