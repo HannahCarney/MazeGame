@@ -11,7 +11,7 @@ describe('By default', function(){
   });
 
   it('should have a starting point', function() {
-    expect(player.place).toBe("a1");
+    expect(player.place).toBe("a7");
   });
 
   it('should have a path', function(){
@@ -28,7 +28,7 @@ describe('player movements', function(){
 
   it('should be able to move right', function(){
     player.moveRight();
-    expect(player.place).toBe("a2");
+    expect(player.place).toBe("a8");
   })
 
   it('should be able to move left', function(){
@@ -55,8 +55,6 @@ describe('player movements', function(){
   	player.moveRight();
   	expect(player.place).toBe("b2")
   });
-
-
 });
 
 describe('grid properties', function(){
@@ -73,6 +71,13 @@ describe('grid properties', function(){
   it('player should not be able to walk into wall', function(){
     player.moveRight();
   	expect(player.moveRight()).toBe("can't move there");
+  });
+
+   it('player should not be able to walk into second wall', function(){
+    player.moveRight();
+    player.moveDown();
+    player.moveDown();
+  	expect(player.moveDown()).toBe("can't move there");
   });
 
 });
