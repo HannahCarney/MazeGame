@@ -7,7 +7,131 @@
  </head>
 <body>
 
-    <img src="http://www.abcteach.com/free/c/circlergb.jpg" id="circle">
+<style>
+  td { width: 1em; height: 1em; line-height: 1 }
+</style>
+  <table>
+    <tr>
+      <td id="a1" onkeydown="moveOnLeft(this), moveOnRight(document.getElementById('a2')), moveonUp(this), moveonDown(document.getElementById('b1'))">A1</td>
+      <td id="a2" onkeydown="moveOnLeft(document.getElementById('a1')), moveOnRight(document.getElementById('a3')), moveOnUp(this), moveOnDown(document.getElementById('b2'))">A2</td>
+      <td id="a3" onkeydown="moveOn(this,document.getElementById('a2'),document.getElementById('a4'),this,document.getElementById('b4'))">A3</td>
+      <td id="a4" onkeydown="moveOn(this,document.getElementById('a3'),document.getElementById('a5'),this,document.getElementById('b5'))">A4</td>
+      <td id="a5" onkeydown="moveOn(this,document.getElementById('a4'),document.getElementById('a6'),this,document.getElementById('b6'))">A5</td>
+      <td id="a6" onkeydown="moveOn(this,document.getElementById('a5'),document.getElementById('a7'),this,document.getElementById('b7'))">A6</td>
+      <td id="a7" onkeydown="moveOn(this,document.getElementById('a6'),document.getElementById('a8'),this,document.getElementById('b8'))">A7</td>
+      <td id="a8" onkeydown="moveOn(this,document.getElementById('a7'),document.getElementById('a9'),this,document.getElementById('b9'))">A8</td>
+      <td id="a9" onkeydown="moveOn(this,document.getElementById('a8'),document.getElementById('a10'),this,document.getElementById('b9'))">A9</td>
+      <td id="a10" onkeydown="moveOn(this,document.getElementById('a9'),this,this,document.getElementById('b10'))">A10</td>
+   <tr>
+      <td id="B1">B1</td>
+      <td>B2</td>
+      <td>B3</td>
+      <td>B4</td>
+      <td>B5</td>
+      <td>B6</td>
+      <td>B7</td>
+      <td>B8</td>
+      <td>B9</td>
+      <td>B10</td>
+    </tr>
+    <tr>
+      <td>C1</td>
+      <td>C2</td>
+      <td>C3</td>
+      <td>C4</td>
+      <td>C5</td>
+      <td>C6</td>
+      <td>C7</td>
+      <td>C8</td>
+      <td>C9</td>
+      <td>C10</td>
+    </tr>
+    <tr>
+      <td>D1</td>
+      <td>D2</td>
+      <td>D3</td>
+      <td>D4</td>
+      <td>D5</td>
+      <td>D6</td>
+      <td>D7</td>
+      <td>D8</td>
+      <td>D9</td>
+      <td>D10</td>
+    </tr>
+    <tr>
+      <td>E1</td>
+      <td>E2</td>
+      <td>E3</td>
+      <td>E4</td>
+      <td>E5</td>
+      <td>E6</td>
+      <td>E7</td>
+      <td>E8</td>
+      <td>E9</td>
+      <td>E10</td>
+    </tr>
+    <tr>
+      <td>F1</td>
+      <td>F2</td>
+      <td>F3</td>
+      <td>F4</td>
+      <td>F5</td>
+      <td>F6</td>
+      <td>F7</td>
+      <td>F8</td>
+      <td>F9</td>
+      <td>F10</td>
+    </tr>
+    <tr>
+      <td>G1</td>
+      <td>G2</td>
+      <td>G3</td>
+      <td>G4</td>
+      <td>G5</td>
+      <td>G6</td>
+      <td>G7</td>
+      <td>G8</td>
+      <td>G9</td>
+      <td>G10</td>
+    </tr>
+    <tr>
+      <td>H1</td>
+      <td>H2</td>
+      <td>H3</td>
+      <td>H4</td>
+      <td>H5</td>
+      <td>H6</td>
+      <td>H7</td>
+      <td>H8</td>
+      <td>H9</td>
+      <td>H10</td>
+    </tr>
+    <tr>
+      <td id="I1">I1</td>
+      <td>I2</td>
+      <td>I3</td>
+      <td>I4</td>
+      <td>I5</td>
+      <td>I6</td>
+      <td>I7</td>
+      <td>I8</td>
+      <td>I9</td>
+      <td>I10</td>
+    </tr>
+    <tr>
+      <td id="j1" onkeydown="moveOn(this,this,document.getElementById('j2'),document.getElementById('i1'),this"></td>
+      <td id="j2">J2</td>
+      <td>J3</td>
+      <td>J4</td>
+      <td>J5</td>
+      <td>J6</td>
+      <td>J7</td>
+      <td>J8</td>
+      <td>J9</td>
+      <td>J10</td>
+    </tr>
+  </table>
+
 
   <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
   <script src="js/interface.js"></script> 
@@ -15,29 +139,75 @@
   <script src="js/player.js"></script>
 
   <script type="text/javascript">
+
+
   $(document).ready(function () {
     
+    
+        var player = new Player();
+        var grid = new Grid();
+
+        player.place = document.getElementById('a1')
+
+        var moveOnLeft = function(leftField){
+           	leftField.focus();
+            // var img = document.createElement("img");
+            // img.src = "https://www.thegamecrafter.com/printable-icon/SmallCircleChit.png" 
+        }
+
+        var moveOnRight = function(rightField){
+           	rightField.focus();
+            // var img = document.createElement("img");
+            // img.src = "https://www.thegamecrafter.com/printable-icon/SmallCircleChit.png"
+        }
+            
+        var moveOnUp = function(topField){
+           	topField.focus();
+            // var img = document.createElement("img");
+            // img.src = "https://www.thegamecrafter.com/printable-icon/SmallCircleChit.png"
+        }
+          
+        var moveOnDown = function(bottomField){
+           	bottomField.focus();
+            // var img = document.createElement("img");
+            // img.src = "https://www.thegamecrafter.com/printable-icon/SmallCircleChit.png"
+
+        }
+
+
+
+
     $(document).keydown(function(key) {
+
+
     
         switch(parseInt(key.which,10)) {
           // Left Arrow Pressed
           case 37:
-            $('#circle').animate({left: "-=10px"}, 10);
+            player.moveLeft()
+            moveOnLeft()
+            console.log(player.place)
           break;
 
           // Up Arrow Pressed
           case 38:
-            $('#circle').animate({bottom: "+=10px"}, 10);
+            player.moveUp()
+            moveOnUp()
+            console.log(player.place)
           break;
                 
           // Right Arrow Pressed
           case 39:
-            $('#circle').animate({left: "+=10px"}, 10);
+            player.moveRight()
+            moveOnRight()
+            console.log(player.place)
           break;
 
           // Down Arrow Pressed
           case 40:
-            $('#circle').animate({bottom: "-=10px"}, 10);
+            player.moveDown()
+            moveOnDown()
+            console.log(player.place)
           break;
     
         } 

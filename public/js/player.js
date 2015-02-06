@@ -1,7 +1,7 @@
-var Grid = require('./grid')
+
 
 var Player = function(){
-  this.place = "a7"
+  this.place = "a1"
   this.grid = new Grid;
   this.am = ["a1", "a7"]
   this.move = ["a2", "a8"]
@@ -50,5 +50,3 @@ Array.prototype.contains = function(obj) {
     }
     return false;
 }
-
-module.exports = Player;
