@@ -1,23 +1,26 @@
 
 
 var Player = function(){
+  this.able = true
   this.place = "a1"
   this.grid = new Grid;
-  this.am = []
-  this.move = []
+  this.am = ["a1"]
+  this.move = ["a2"]
 
-  //could I just make the walls small in front end? grid
 };
 Player.prototype.cantMove = function(input){
   var currentPosition = this.place
    if (this.am.contains(currentPosition)) {
   	 var index = this.am.indexOf(currentPosition) }
      if (this.move[index] == input) {
-   	   return ("can't move there") }
+   	   console.log("can't move there")
+       this.able = false }
      else if (input == undefined) {
-  	   return "area limit" }
+  	   console.log("area limit")
+       this.able = false }
      else {
   	   this.place = input
+       this.able = true
   	   return this.place }
 };
 

@@ -15,10 +15,10 @@
   <div class="grid-maze">
     <div class="row">
       <div class="row1">
-         <div class="cell">a1</div>
+         <div class="cell" id="a1" type="text">a1</div>
        </div>
        <div class="row1">
-         <div class="cell">a2</div>
+         <div class="cell" id="a2" class="" value="">a2</div>
        </div>
        <div class="row1">
          <div class="cell">a3</div>
@@ -368,82 +368,44 @@ $(window).on('keydown', function (e) {
      highlightCell();
 });
 
+
 function moveLeft() {
-    position.x--;
-    if (position.x < 0)
-        position.x = 0;
-        player.moveLeft();
+	  player.moveLeft();
+    if (player.able === true)
+      position.x--;
+      if (position.x < 0)
+        position.x = 0;      
 }
 
 function moveUp() {
-    position.y--;
-    if (position.y < 0)
+	player.moveUp()
+    if (player.able === true)
+      position.y--;
+      if (position.y < 0)
         position.y = 0;
-        player.moveUp();
 }
 
 function moveRight() {
-    position.x++;
-    if (position.x >= mazeGame[0].length)
-        position.x = mazeGame[0].length - 1;
-        player.moveRight()
+	player.moveRight()
+    if (player.able === true)
+      position.x++;
+      if (position.x >= mazeGame[0].length)
+        position.x = mazeGame[0].length - 1;      
 }
 
 function moveDown() {
-    position.y++;
-    if (position.y >= mazeGame.length)
+	player.moveDown()
+	if (player.able === true)
+      position.y++;
+      if (position.y >= mazeGame.length)
         position.y = mazeGame.length - 1;
-        player.moveDown()
 }
 
 function highlightCell() {
     $('.row1').removeClass('selected');
     mazeGame[position.y][position.x].addClass('selected');
     console.log(player.place)
-
-  
 }
-
-    
-    // $(document).keydown(function(key) {
-    
-    
-
-
-           
-   //      switch(parseInt(key.which,10)) {
-   //        // Left Arrow Pressed
-   //        case 37:
-   //          player.moveLeft()
-   //          console.log(player.place)
-           
-   //          // $(leftField).addClass('active');
-   //        break;
-
-   //        // Up Arrow Pressed
-   //        case 38:
-   //          player.moveUp()
-   //          console.log(player.place)
-   //        break;
-                
-   //        // Right Arrow Pressed
-   //        case 39:
-   //          player.moveRight()
-   //          $(".active").removeClass("active");
-   //            $("#a").addClass("active");
-   //          player.place = document.getElementsByClassName("active")
-   //          console.log(player.place)
-   //        break;
-
-   //        // Down Arrow Pressed
-   //        case 40:
-   //          player.moveDown()
-   //          console.log(player.place)
-   //        break;
-    
-   //      } 
-     
-   // });
 
   </script>   
 </body>

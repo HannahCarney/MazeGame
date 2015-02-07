@@ -3,10 +3,8 @@
 }
 */
 .row1.selected {
-    border:2px solid #000;
     background: url(http://cliparts.co/cliparts/XdT/4br/XdT4bryie.png) 0 0;
     background-size:100px 100px;
-
     background-repeat: no-repeat;
     box-sizing:border-box;
 }
