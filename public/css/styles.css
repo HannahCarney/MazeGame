@@ -1,36 +1,19 @@
 /*.grid-maze {
-    font-size: 0;
-    width: 70%;
-}*/
-
+    width: 100%;
+}
+*/
 .row1.selected {
     border:2px solid #000;
+    background: url(http://cliparts.co/cliparts/XdT/4br/XdT4bryie.png) 0 0;
+    background-size:100px 100px;
+
+    background-repeat: no-repeat;
     box-sizing:border-box;
 }
 .row1 {
     position: relative;
-    height: 50px;
+    height: 100px;
     background-color: #4DC3F0;
     display: inline-block;
-    width: 14.2853%;
+    width: 8%;
 }
-/*.row2 .row {
-    position: relative;
-    height: 80px;
-    background-color: #FFE06B;
-    display: inline-block;
-    width: 14.2853%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}*/
-/*.cell {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 50%;
-    text-align: center;
-    line-height: 0;
-    font-size: 40px;
-}*/
