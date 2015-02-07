@@ -12,31 +12,105 @@
   td { width: 1em; height: 1em; line-height: 1 }
 </style>
 
-  <table class="grid-maze">
-    <tr>
-      <td><input id="a1" class="active" type="text" value="hi" disabled></td>
-      <td><input id="a2" class="" value="" disabled></td>
-      <td><input id="a3" class="" value="" disabled></td>
-      <td><input id="a4" class="" value="" disabled></td>
-      <td id="a5" class="" onkeydown="moveOn(this,document.getElementById('a4'),document.getElementById('a6'),this,document.getElementById('b6'))">A5</td>
-      <td id="a6" class="" onkeydown="moveOn(this,document.getElementById('a5'),document.getElementById('a7'),this,document.getElementById('b7'))">A6</td>
-      <td id="a7" class=""onkeydown="moveOn(this,document.getElementById('a6'),document.getElementById('a8'),this,document.getElementById('b8'))">A7</td>
-      <td id="a8" class="" onkeydown="moveOn(this,document.getElementById('a7'),document.getElementById('a9'),this,document.getElementById('b9'))">A8</td>
-      <td id="a9" class="" onkeydown="moveOn(this,document.getElementById('a8'),document.getElementById('a10'),this,document.getElementById('b9'))">A9</td>
-      <td id="a10" class="" onkeydown="moveOn(document.getElementById('a9'),this,this,document.getElementById('b10'))">A10</td>
-   <tr>
-      <td id="B1">B1</td>
-      <td>B2</td>
-      <td>B3</td>
-      <td>B4</td>
-      <td>B5</td>
-      <td>B6</td>
-      <td>B7</td>
-      <td>B8</td>
-      <td>B9</td>
-      <td>B10</td>
-    </tr>
-    <tr>
+  <div class="grid-maze">
+    <div class="row">
+      <div class="row1">
+         <div class="cell" id="a1" class="active" type="text" value="hi">a1</div>
+       </div>
+       <div class="row1">
+         <div class="cell" id="a2" class="" value="">a2</div>
+       </div>
+       <div class="row1">
+         <div class="cell">a3</div>
+       </div>
+       <div class="row1">
+         <div class="cell">a4</div>
+       </div>
+       <div class="row1">
+         <div class="cell">a5</div>
+       </div>
+       <div class="row1">
+         <div class="cell">a6</div>
+       </div>
+       <div class="row1">
+         <div class="cell">a7</div>
+       </div>
+       <div class="row1">
+         <div class="cell">a8</div>
+       </div>
+       <div class="row1">
+         <div class="cell">a9</div>
+       </div>
+       <div class="row1">
+         <div class="cell">a10</div>
+       </div>
+     </div>
+     <div class="row">
+       <div class="row1">
+         <div class="cell">b1</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b2</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b3</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b4</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b5</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b6</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b7</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b8</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b9</div>
+       </div>
+       <div class="row1">
+         <div class="cell">b10</div>
+       </div>
+     </div>
+     <div class="row">
+       <div class="row1">
+         <div class="cell">c1</div>
+       </div>
+       <div class="row1">
+         <div class="cell">c2</div>
+       </div>
+       <div class="row1">
+         <div class="cell">c3</div>
+       </div>
+       <div class="row1">
+         <div class="cell">c4</div>
+       </div>
+       <div class="row1">
+         <div class="cell">c5</div>
+       </div>
+       <div class="row1">
+         <div class="rcell">c6</div>
+       </div>
+       <div class="row1">
+         <div class="cell">c7</div>
+       </div>
+       <div class="row1">
+         <div class="cell">c8</div>
+       </div>
+       <div class="row1">
+         <div class="cell">c9</div>
+       </div>
+       <div class="row1">
+         <div class="cell">c10</div>
+       </div>
+     </div>
+   </div>
+
       <td>C1</td>
       <td>C2</td>
       <td>C3</td>
@@ -173,10 +247,11 @@ var mazeGame = [];
 $(document).ready(function () {
     $('.row').each(function () {
         mazeGame.push([]);
-        $('.day, .date', this).each(function () {
+        $('.row1', this).each(function () {
             mazeGame[mazeGame.length - 1].push($(this));
         });
     });
+    highlightCell();
 });
 
 $(window).on('keydown', function (e) {
@@ -188,6 +263,7 @@ $(window).on('keydown', function (e) {
         moveRight();
     else if (e.keyCode === 40) // down
         moveDown();
+     highlightCell();
 });
 
 function moveLeft() {
@@ -214,6 +290,10 @@ function moveDown() {
         position.y = mazeGame.length - 1;
 }
 
+function highlightCell() {
+    $('.row1').removeClass('selected');
+    mazeGame[position.y][position.x].addClass('selected');
+}
 
     
     // $(document).keydown(function(key) {
