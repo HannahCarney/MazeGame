@@ -3,7 +3,7 @@
     width: 70%;
 }*/
 
-.row1.selected, .row2.selected {
+.row1.selected {
     border:2px solid #000;
     box-sizing:border-box;
 }
