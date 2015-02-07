@@ -3,8 +3,8 @@
 var Player = function(){
   this.place = "a1"
   this.grid = new Grid;
-  this.am = ["a1", "a7"]
-  this.move = ["a2", "a8"]
+  this.am = []
+  this.move = []
 
   //could I just make the walls small in front end? grid
 };

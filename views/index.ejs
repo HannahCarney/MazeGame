@@ -1,4 +1,5 @@
 <!Doctype html>
+
 <html>
 <head>
   <link href="css/styles.css" rel="stylesheet" type="text/css">
@@ -10,18 +11,19 @@
 <style>
   td { width: 1em; height: 1em; line-height: 1 }
 </style>
-  <table>
+
+  <table class="grid-maze">
     <tr>
-      <td id="a1" onkeydown="moveOnLeft(this), moveOnRight(document.getElementById('a2')), moveonUp(this), moveonDown(document.getElementById('b1'))">A1</td>
-      <td id="a2" onkeydown="moveOnLeft(document.getElementById('a1')), moveOnRight(document.getElementById('a3')), moveOnUp(this), moveOnDown(document.getElementById('b2'))">A2</td>
-      <td id="a3" onkeydown="moveOn(this,document.getElementById('a2'),document.getElementById('a4'),this,document.getElementById('b4'))">A3</td>
-      <td id="a4" onkeydown="moveOn(this,document.getElementById('a3'),document.getElementById('a5'),this,document.getElementById('b5'))">A4</td>
-      <td id="a5" onkeydown="moveOn(this,document.getElementById('a4'),document.getElementById('a6'),this,document.getElementById('b6'))">A5</td>
-      <td id="a6" onkeydown="moveOn(this,document.getElementById('a5'),document.getElementById('a7'),this,document.getElementById('b7'))">A6</td>
-      <td id="a7" onkeydown="moveOn(this,document.getElementById('a6'),document.getElementById('a8'),this,document.getElementById('b8'))">A7</td>
-      <td id="a8" onkeydown="moveOn(this,document.getElementById('a7'),document.getElementById('a9'),this,document.getElementById('b9'))">A8</td>
-      <td id="a9" onkeydown="moveOn(this,document.getElementById('a8'),document.getElementById('a10'),this,document.getElementById('b9'))">A9</td>
-      <td id="a10" onkeydown="moveOn(this,document.getElementById('a9'),this,this,document.getElementById('b10'))">A10</td>
+      <td><input id="a1" class="active" type="text" value="hi" disabled></td>
+      <td><input id="a2" class="" value="" disabled></td>
+      <td><input id="a3" class="" value="" disabled></td>
+      <td><input id="a4" class="" value="" disabled></td>
+      <td id="a5" class="" onkeydown="moveOn(this,document.getElementById('a4'),document.getElementById('a6'),this,document.getElementById('b6'))">A5</td>
+      <td id="a6" class="" onkeydown="moveOn(this,document.getElementById('a5'),document.getElementById('a7'),this,document.getElementById('b7'))">A6</td>
+      <td id="a7" class=""onkeydown="moveOn(this,document.getElementById('a6'),document.getElementById('a8'),this,document.getElementById('b8'))">A7</td>
+      <td id="a8" class="" onkeydown="moveOn(this,document.getElementById('a7'),document.getElementById('a9'),this,document.getElementById('b9'))">A8</td>
+      <td id="a9" class="" onkeydown="moveOn(this,document.getElementById('a8'),document.getElementById('a10'),this,document.getElementById('b9'))">A9</td>
+      <td id="a10" class="" onkeydown="moveOn(document.getElementById('a9'),this,this,document.getElementById('b10'))">A10</td>
    <tr>
       <td id="B1">B1</td>
       <td>B2</td>
@@ -130,7 +132,8 @@
       <td>J9</td>
       <td>J10</td>
     </tr>
-  </table>
+     </table>
+
 
 
   <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
@@ -140,80 +143,119 @@
 
   <script type="text/javascript">
 
-
-  $(document).ready(function () {
-    
-    
         var player = new Player();
         var grid = new Grid();
 
-        player.place = document.getElementById('a1')
+        player.place = document.getElementsByClassName("active")
 
-        var moveOnLeft = function(leftField){
-           	leftField.focus();
-            // var img = document.createElement("img");
-            // img.src = "https://www.thegamecrafter.com/printable-icon/SmallCircleChit.png" 
-        }
+       
+  // $(document).ready(function () {
 
-        var moveOnRight = function(rightField){
-           	rightField.focus();
-            // var img = document.createElement("img");
-            // img.src = "https://www.thegamecrafter.com/printable-icon/SmallCircleChit.png"
-        }
-            
-        var moveOnUp = function(topField){
-           	topField.focus();
-            // var img = document.createElement("img");
-            // img.src = "https://www.thegamecrafter.com/printable-icon/SmallCircleChit.png"
-        }
-          
-        var moveOnDown = function(bottomField){
-           	bottomField.focus();
-            // var img = document.createElement("img");
-            // img.src = "https://www.thegamecrafter.com/printable-icon/SmallCircleChit.png"
-
-        }
+//   	 $(".grid-maze tr > td > img").on('click', function () {
+//   	var $this = $(this);
+//   	var cellIndex = $this.index();
+//   	$this.closest('td').next().children().eq(cellIndex).
+//     var $siblings = $(this).parent().siblings();
+//     var contents = $siblings.map(function(){
+//         return $(this).html();
+//     });
+//     $siblings.each(function(i){
+//         $(this).html((i==0) ? contents[1] : contents[0])
+//     })
+// });
 
 
+// });
 
+var position = { x: 0, y: 0 };
+var mazeGame = [];
 
-    $(document).keydown(function(key) {
+$(document).ready(function () {
+    $('.row').each(function () {
+        mazeGame.push([]);
+        $('.day, .date', this).each(function () {
+            mazeGame[mazeGame.length - 1].push($(this));
+        });
+    });
+});
+
+$(window).on('keydown', function (e) {
+    if (e.keyCode === 37) // left
+        moveLeft();
+    else if (e.keyCode === 38) // up
+        moveUp();
+    else if (e.keyCode === 39) // right
+        moveRight();
+    else if (e.keyCode === 40) // down
+        moveDown();
+});
+
+function moveLeft() {
+    position.x--;
+    if (position.x < 0)
+        position.x = 0;
+}
+
+function moveUp() {
+    position.y--;
+    if (position.y < 0)
+        position.y = 0;
+}
+
+function moveRight() {
+    position.x++;
+    if (position.x >= mazeGame[0].length)
+        position.x = mazeGame[0].length - 1;
+}
+
+function moveDown() {
+    position.y++;
+    if (position.y >= mazeGame.length)
+        position.y = mazeGame.length - 1;
+}
 
 
     
-        switch(parseInt(key.which,10)) {
-          // Left Arrow Pressed
-          case 37:
-            player.moveLeft()
-            moveOnLeft()
-            console.log(player.place)
-          break;
+    // $(document).keydown(function(key) {
+    
+    
 
-          // Up Arrow Pressed
-          case 38:
-            player.moveUp()
-            moveOnUp()
-            console.log(player.place)
-          break;
+
+           
+   //      switch(parseInt(key.which,10)) {
+   //        // Left Arrow Pressed
+   //        case 37:
+   //          player.moveLeft()
+   //          console.log(player.place)
+           
+   //          // $(leftField).addClass('active');
+   //        break;
+
+   //        // Up Arrow Pressed
+   //        case 38:
+   //          player.moveUp()
+   //          console.log(player.place)
+   //        break;
                 
-          // Right Arrow Pressed
-          case 39:
-            player.moveRight()
-            moveOnRight()
-            console.log(player.place)
-          break;
+   //        // Right Arrow Pressed
+   //        case 39:
+   //          player.moveRight()
+   //          $(".active").removeClass("active");
+   //            $("#a").addClass("active");
+   //          player.place = document.getElementsByClassName("active")
+   //          console.log(player.place)
+   //        break;
 
-          // Down Arrow Pressed
-          case 40:
-            player.moveDown()
-            moveOnDown()
-            console.log(player.place)
-          break;
+   //        // Down Arrow Pressed
+   //        case 40:
+   //          player.moveDown()
+   //          console.log(player.place)
+   //        break;
     
-        } 
+   //      } 
      
-   });
-  });
+   // });
+
   </script>   
 </body>
 </html>
