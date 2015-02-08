@@ -2,6 +2,7 @@
     background: url(/images/maze.jpg) 0 0 no-repeat;
     background-size:1040px 1040px;
     z-index: -2;
+    width: 100%;
 }
 
 .row1.selected {
