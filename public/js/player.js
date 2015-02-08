@@ -4,20 +4,33 @@ var Player = function(){
   this.able = true
   this.place = "a1"
   this.grid = new Grid;
-  this.am = ["a1", "a2","b1","c1","d1","e1","f1","g1","h1","i1","j1","i10","h10","g10","f10","e10","d10","c10","b10","a10"]
-  this.move = ["a2", "a1","a10","b10","c10","d10","e10","f10","g10","h10","i10","j1","i1","h1","g1","f1","e1","d1","c1","b1"]
+  this.am = ["a3"]
+  this.move = [["a4","b3"],["a2"], ["a1"],["a10"],["b10"],["c10"],["d10"],["e10"],["f10"],["g10"],["h10"],["i10"],["j1"],["i1"],["h1"],["g1"],["f1"],["e1"],["d1"],["c1"],["b1"],["a3"],["a3"]]
 
 };
 Player.prototype.cantMove = function(input){
-  var currentPosition = this.place
-   if (this.am.contains(currentPosition)) {
-  	 var index = this.am.indexOf(currentPosition) }
-     if (this.move[index] == input || input === undefined || input.length > 4) {
-       this.able = false }
+   if (this.am.contains(this.place)) {
+     console.log("here")
+  	 wall(input) }
+   else {
+    this.place = input
+    console.log("there")
+    return this.place
+   }
+};
+
+function wall(input) {
+  console.log("yo")
+  console.log(player.place)
+  console.log(player.am)
+  var index = player.am.indexOf(player.place) 
+  console.log(player.am.indexOf(player.place))
+     if (player.move[index] == input || input === undefined || input.length > 4 || player.move[index].contains(input)) {
+       player.able = false }
      else {
-  	   this.place = input
-       this.able = true
-  	   return this.place }
+       player.place = input
+       player.able = true
+       return player.place }
 };
 
 Player.prototype.moveRight = function(){
