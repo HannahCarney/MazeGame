@@ -4,33 +4,41 @@ var Player = function(){
   this.able = true
   this.place = "a1"
   this.grid = new Grid;
-  this.am = ["a3"]
-  this.move = [["a4","b3"],["a2"], ["a1"],["a10"],["b10"],["c10"],["d10"],["e10"],["f10"],["g10"],["h10"],["i10"],["j1"],["i1"],["h1"],["g1"],["f1"],["e1"],["d1"],["c1"],["b1"],["a3"],["a3"]]
+  this.am = ["a1","a2","a3"]
+  this.move = [["a2"],["a1"],["a4","b3"]]
 
 };
+
 Player.prototype.cantMove = function(input){
    if (this.am.contains(this.place)) {
      console.log("here")
-  	 wall(input) }
-   else {
+  	 this.wall(input) }
+   else if (this.am.contains(this.place) == false) {
     this.place = input
-    console.log("there")
-    return this.place
+    this.able = true
+    console.log("moves")
    }
+   return this.place
 };
 
-function wall(input) {
+Player.prototype.wall = function(input) {
   console.log("yo")
-  console.log(player.place)
-  console.log(player.am)
-  var index = player.am.indexOf(player.place) 
-  console.log(player.am.indexOf(player.place))
-     if (player.move[index] == input || input === undefined || input.length > 4 || player.move[index].contains(input)) {
-       player.able = false }
+  console.log(this.place)
+  console.log(this.am)
+  var index = this.am.indexOf(this.place) 
+  console.log(this.am.indexOf(this.place))
+  console.log(input)
+     if (this.move[index].contains(input) == true || input === undefined || input.length > 4 ){
+       this.able = false 
+       console.log("stays put") }
      else {
-       player.place = input
-       player.able = true
-       return player.place }
+       console.log(input)
+       this.place = input
+       console.log(this.place)
+       this.able = true
+       console.log("goes there")
+    }
+    return this.place
 };
 
 Player.prototype.moveRight = function(){
@@ -44,7 +52,7 @@ Player.prototype.moveLeft = function(){
 };
 
 Player.prototype.moveDown = function(){
-  var moveTo = (this.cantMove(this.grid.map[this.grid.map.indexOf(this.place) + this.grid.columns ]))
+  var moveTo = (this.grid.map[this.grid.map.indexOf(this.place) + this.grid.columns ])
   return this.cantMove(moveTo);
 };
 
