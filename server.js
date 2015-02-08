@@ -1,25 +1,18 @@
-var express = require('express');
+var express = require('express')
 var app = express();
-var http = require('http');
-var server = http.createServer(app);
-var port = 3001
+var expressLayouts = require('express-ejs-layouts');
 
-server.listen(port, function(){
-  console.log('running server on port' + port);
-});
-
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(expressLayouts);
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(request, response){
-  response.render('index')
+app.set('port', (process.env.PORT || 3001))
+
+app.get('/', function(request, response) {
+  response.render("index");
 });
 
-
-
-// app.get('/greetings', function(request, response){
-//   response.render('greeting', { name: "Spike" });
-// });
-
-
-module.exports = server;
+app.listen(app.get('port'), function() {
+  console.log("Node app is running at localhost:" + app.get('port'))
+})
