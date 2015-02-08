@@ -10,7 +10,6 @@ var Player = function(){
 };
 
 Player.prototype.cantMove = function(input){
-    console.log(input)
   if (this.am.contains(this.place)) {
     this.checkIfWall(input) }
   else if (this.am.contains(this.place) == false && input.length < 5) {
@@ -18,7 +17,6 @@ Player.prototype.cantMove = function(input){
     this.place = input
     this.able = true}
   else{
-     console.log("yo")
      return this.place
   } 
   return this.place
@@ -27,15 +25,11 @@ Player.prototype.cantMove = function(input){
 
 Player.prototype.checkIfWall = function(input) {
   var index = this.am.indexOf(this.place) 
-  console.log(index)
-  console.log("here")
-  console.log(input)
      if (input == undefined || input.length > 4 || this.move[index].contains(input) == true){
-      console.log("stay")
        this.able = false  }
      else {
-       console.log("right here")
        this.place = input
+       this.win(input)
        this.able = true
     }
     return this.place
@@ -59,6 +53,13 @@ Player.prototype.moveDown = function(){
 Player.prototype.moveUp = function(){
   var moveTo = (this.grid.map[this.grid.map.indexOf(this.place) - this.grid.columns ])
   return this.cantMove(moveTo);
+};
+
+Player.prototype.win = function(input){
+  if (input == "j2") {
+    console.log("you win")
+    player.win = true
+  }
 };
 
 Array.prototype.contains = function(k) {
