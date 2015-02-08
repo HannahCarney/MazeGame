@@ -12,13 +12,9 @@ var Player = function(){
 Player.prototype.cantMove = function(input){
   if (this.am.contains(this.place)) {
     this.checkIfWall(input) }
-  else if (this.am.contains(this.place) == false && input.length < 5) {
-  
+  else if (this.am.contains(this.place) == false && input.length < 5) {  
     this.place = input
-    this.able = true}
-  else{
-     return this.place
-  } 
+    this.able = true }
   return this.place
 };
 
