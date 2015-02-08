@@ -1,17 +1,21 @@
-/*.grid-maze {
-    width: 100%;
+.grid-maze {
+    background: url(/images/maze.jpg) 0 0 no-repeat;
+    background-size:1040px 1040px;
+    z-index: -2;
 }
-*/
+
 .row1.selected {
-    background: url(http://cliparts.co/cliparts/XdT/4br/XdT4bryie.png) 0 0;
+    background: url(http://cliparts.co/cliparts/XdT/4br/XdT4bryie.png) 0 0 no-repeat;
     background-size:100px 100px;
-    background-repeat: no-repeat;
-    box-sizing:border-box;
+    z-index: 10;
 }
 .row1 {
     position: relative;
     height: 100px;
+    width: 100px;
     background-color: #4DC3F0;
     display: inline-block;
-    width: 8%;
+    z-index: -1;
 }
+
+
