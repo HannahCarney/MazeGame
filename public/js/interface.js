@@ -37,17 +37,6 @@ function highlightCell() {
     console.log(player.place)
 }
 
-
-function winOrNot(){
-  if (player.able === true && player.hasWon == false && player.keyHave == false){
-    console.log("here")
-  }
-	else if (player.hasWon == false && player.keyHave == true){
-    console.log("there")
-	  // flash here
-	}
-}
-
 function key(){
   if (player.keyHave == true) {
     $('.row1').removeClass('key');
