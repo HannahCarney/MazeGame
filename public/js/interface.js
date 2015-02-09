@@ -2,8 +2,9 @@ function moveLeft() {
 	  player.moveLeft();
     if (player.able === true)
       position.x--;
-      if (position.x < 0)
-        position.x = 0;      
+      if (position.x < 0) {
+        position.x = 0;
+      }
 }
 
 function moveUp() {
@@ -37,11 +38,12 @@ function highlightCell() {
 }
 
 
-function win(){
-  if (player.hasWon == true && player.keyHave == false){
-    // flash here
+function winOrNot(){
+  if (player.able === true && player.hasWon == false && player.keyHave == false){
+    console.log("here")
   }
-	else if (player.hasWon == true && player.keyHave == true){
+	else if (player.hasWon == false && player.keyHave == true){
+    console.log("there")
 	  // flash here
 	}
 }

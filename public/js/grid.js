@@ -13,3 +13,4 @@ var Grid = function(){
 };
 
 //want to be able to make walls between each cell
+module.exports = Grid;

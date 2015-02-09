@@ -1,37 +1,36 @@
-config for express server
+//config for express server
 
 module.exports = function(grunt){
 
- grunt.initConfig({
+  grunt.initConfig({
    
-   pkg:grunt.file.readJSON('package.json'),
-   
-   mocha_casperjs: {
-       options:{ 
-     }, 
-       files: {
-       src: ['test/**/*']
-     }
-   },
-   
-   express: {
-     dev: {
+    pkg:grunt.file.readJSON('package.json'),
+
+    mocha_casperjs: {
+      options: {}, 
+      files: {
+        src: ['test/**/*']
+      }
+    },
+
+    express: {
+     test: {
        options: {
-       script: './server.js'
+         script: './server.js'
        }
      }
-   },
+    },
 
-   jshint:{
+    jshint:{
      files:['src/*']
-   }
+    }
     
- });
+  });
 
- grunt.loadNpmTasks('grunt-mocha-casperjs');
- grunt.loadNpmTasks('grunt-express-server');
- grunt.loadNpmTasks('grunt-contrib-jshint');
- grunt.registerTask('default', [ 'express', 'mocha_casperjs', 'jshint']);
+  grunt.loadNpmTasks('grunt-mocha-casperjs');
+  grunt.loadNpmTasks('grunt-express-server');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.registerTask('default', [ 'express:test', 'mocha_casperjs', 'jshint']);
 
 
 };

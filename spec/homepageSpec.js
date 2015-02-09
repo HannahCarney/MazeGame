@@ -1,5 +1,5 @@
-var Player = require('../js/player');
-var Grid = require('../js/grid');
+var Player = require('../public/js/player');
+var Grid = require('../public/js/grid');
 
 
 describe('By default', function(){
