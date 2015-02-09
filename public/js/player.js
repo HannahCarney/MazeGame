@@ -52,7 +52,7 @@ Player.prototype.moveUp = function(){
 };
 
 Player.prototype.win = function(input){
-  if (input == "j2") {
+  if (input == "j1") {
     console.log("you win")
     player.win = true
   }
