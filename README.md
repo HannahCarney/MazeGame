@@ -1,7 +1,7 @@
-Maze Game
+:panda_face: Maze Game :panda_face:
 =========
 
-A silly maze game
+Panda has lost her key! Help her find it, and let her into her hut.
 
 Heroku (live)
 ------
