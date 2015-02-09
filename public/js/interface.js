@@ -38,7 +38,17 @@ function highlightCell() {
 
 
 function win(){
-	if (player.win == true){
-	  alert("You Win")
+  if (player.hasWon == true && player.keyHave == false){
+    // flash here
+  }
+	else if (player.hasWon == true && player.keyHave == true){
+	  // flash here
 	}
+}
+
+function key(){
+  if (player.keyHave == true) {
+    $('.row1').removeClass('key');
+
+  }
 }

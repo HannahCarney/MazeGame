@@ -1,6 +1,8 @@
 
 
 var Player = function(){
+  this.keyHave = false
+  this.hasWon = false
   this.able = true
   this.place = "a1"
   this.grid = new Grid;
@@ -25,7 +27,9 @@ Player.prototype.checkIfWall = function(input) {
        this.able = false  }
      else {
        this.place = input
-       this.win(input)
+       this.needKey(input)
+       this.winGame(input)
+       this.keyGrab(input)
        this.able = true
     }
     return this.place
@@ -51,10 +55,23 @@ Player.prototype.moveUp = function(){
   return this.cantMove(moveTo);
 };
 
-Player.prototype.win = function(input){
-  if (input == "j1") {
+Player.prototype.needKey = function(input){
+  if (input == "j2" && this.keyHave == false) {
+    console.log("you need the key")
+  }
+}
+
+Player.prototype.winGame = function(input){
+  if (input == "j1" && this.keyHave == true) {
     console.log("you win")
-    player.win = true
+    this.hasWon = true
+  }
+};
+
+Player.prototype.keyGrab = function(input){
+  if (input == "i8") {
+    console.log("key")
+    this.keyHave = true
   }
 };
 

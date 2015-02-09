@@ -8,7 +8,7 @@
 .row1.selected {
     background: url(/images/panda.jpg) 0 0 no-repeat;
     background-size:100px 100px;
-    z-index: 20;
+    z-index: 30;
 }
 .row1 {
     position: relative;
@@ -21,6 +21,12 @@
 .row1.win {
     background: url(/images/hut.gif) 0 0 no-repeat;
     background-size:100px 100px;
+    z-index: 20;
+}
+
+.row1.key {
+    background: url(http://i.istockimg.com/file_thumbview_approve/57595718/3/stock-illustration-57595718-key-cartoon.jpg) 0 0 no-repeat;
+    background-size:90px 90px;
     z-index: 20;
 }
 
